@@ -7,7 +7,11 @@ InboxSDK.load('1', INBOX_SDK_PUBLIC_KEY).then(function(sdk) {
     });
     statusBar.el.style.paddingLeft = '9px';
 
-    var setStatusMessage = function(message) {
+    var setStatusMessage = function(message, color) {
+      if (typeof color === 'undefined') {
+        color = '#000';
+      }
+      statusBar.el.style.color = color;
       statusBar.el.innerHTML = "<small>" + message + "</small>";
     };
 
@@ -15,13 +19,16 @@ InboxSDK.load('1', INBOX_SDK_PUBLIC_KEY).then(function(sdk) {
       var mixture = RecipientMixture.getMixtureType(composeView);
       switch (mixture) {
         case RecipientMixture.INTERNAL_ONLY:
-          setStatusMessage("✅  You're only sending this to people <strong>inside your organization</strong>.");
+          var color = "#007B10";
+          setStatusMessage("✅  You're only sending this to people <strong>inside your organization</strong>.", color);
           break;
         case RecipientMixture.EXTERNAL_ONLY:
-          setStatusMessage("👍  This email is only going to people <strong>outside your organization</strong>.");
+          var color = "#BD8106";
+          setStatusMessage("👍  This email is only going to people <strong>outside your organization</strong>.", color);
           break;
         case RecipientMixture.INTERNAL_AND_EXTERNAL:
-          setStatusMessage("❓  Double check that you wanted to send this to people <strong>both in and out of your organization</strong>.");
+          var color = "#D82F1D";
+          setStatusMessage("❓  Do you want to send this to people <strong>in and out of your organization</strong>?", color);
           break;
         default:
           setStatusMessage("");
