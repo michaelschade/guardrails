@@ -1,7 +1,11 @@
 One of my biggest fears when sending an internal email is that I might
-mistakenly send it to folks outside the company.
+mistakenly send it to folks outside the company. Guardrails for Gmail is
+a lightweight browser extension that fixes that.
 
-Guardrails for Gmail is a lightweight browser extension that fixes that.
+Here's how it works:
+
+![](examples/demo.gif)
+
 Compatible with Google Chrome and Safari, Guardrails will give you a heads up
 when you're sending an email to folks outside your organization or mixing
 external people in with internal contacts. It'll also give you some peace of
