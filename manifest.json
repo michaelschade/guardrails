@@ -1,5 +1,5 @@
 {
-  "name": "Guardrails for Gmail",
+  "name": "Guardrails for Gmail and Google Inbox",
   "description": "A Gmail and Google Inbox extension to help make sure your email ends up in the right hands.",
   "version": "0.1",
   "content_scripts": [
